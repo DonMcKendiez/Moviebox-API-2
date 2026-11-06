@@ -7,7 +7,13 @@
   "d1_databases": [
      {
   "binding": "moviebox-db",
-  "database_id": "3442d8cb-00d3-407a-83c3-7e4707ba5e7c"
+  "database_id":     "3442d8cb-00d3-407a-83c3-7e4707ba5e7c"
      }
                   ],
+ "r2_buckets": [
+    {
+      "binding": "R2_MEDIA_BUCKET",
+      "bucket_name": "moviecube"
+    }
+  ],
 }
