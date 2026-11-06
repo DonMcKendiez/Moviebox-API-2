@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "moviebox-api-2",
-  "main": "src/index.js",
-  "compatibility_date": "2026-11-05"
+  "main": "api.py",
+  "compatibility_date": "2026-11-05",
+  "compatibility_flags": ["python_workers"]
 }
