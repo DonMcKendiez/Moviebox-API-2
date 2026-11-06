@@ -1,15 +1,24 @@
 import re
 import json
 import httpx
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from bs4 import BeautifulSoup
+from workers import asgi
 
 app = FastAPI(
     title="MovieBox API",
     description="Live REST API for moviebox.ph — scrapes all homepage sections with real poster URLs, badges, genres and more",
     version="1.0.0"
 )
+
+@app.get("/movies")
+async def get_movies(request: Request):
+    env = request.scope["env"]  # Access bindings from the ASGI scope
+    results = await env.DB.prepare("SELECT * FROM movies").run()
+    return results.results
+
+Default = asgi.entrypoint(app)
 
 app.add_middleware(
     CORSMiddleware,
