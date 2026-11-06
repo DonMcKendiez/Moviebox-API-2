@@ -895,3 +895,6 @@ async def get_stream_sources(subject_id: str, detail_path: str, se: int = 0, ep:
             "sources": formatted_streams,
             "raw": data.get("data", {})
         }
+
+from workers import asgi
+Default = asgi.entrypoint(app)
