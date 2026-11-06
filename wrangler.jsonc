@@ -3,14 +3,11 @@
   "name": "moviebox-api-2",
   "main": "api.py",
   "compatibility_date": "2026-11-05",
-  "compatibility_flags": ["python_workers"]
-
-  // ...
+  "compatibility_flags": ["python_workers"], 
   "d1_databases": [
-    {
-      "binding": "moviebox-db",
-      "database_id": "3442d8cb-00d3-407a-83c3-7e4707ba5e7c"
-    }
-  ],
-  // ...
+     {
+  "binding": "moviebox-db",
+  "database_id": "3442d8cb-00d3-407a-83c3-7e4707ba5e7c"
+     }
+                  ],
 }
